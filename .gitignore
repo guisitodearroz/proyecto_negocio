@@ -1,0 +1,19 @@
+# Archivos o carpetas que deseas ignorar
+node_modules/
+vendor/
+
+# Ignorar archivos de configuración específicos del IDE
+.idea/
+.vscode/
+
+# Ignorar archivos de caché y sesiones
+*.log
+*.cache
+*.session
+
+# Ignorar archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Indicar que estás utilizando PHP
+*.php
