@@ -15,5 +15,8 @@ vendor/
 .DS_Store
 Thumbs.db
 
-# Indicar que estás utilizando PHP
-*.php
+# Ignorar las imágenes generadas por PHP dentro de la carpeta img
+img/*_codigo.*
+
+# Permitir archivos PHP
+!*.php
