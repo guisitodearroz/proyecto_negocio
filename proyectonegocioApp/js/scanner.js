@@ -34,7 +34,7 @@ function buscarProductoEnBd(codigo) {
         url:'', //poner la direccion de mi archivo php donde hago la consulta en la base 
         method: 'GET',
         data: {codigo_barras: codigo},
-        succes: function(response){
+        success: function(response){
             //vericacion de producto existente
             if (response.producto) {
                 //el producto esta registrado
@@ -44,8 +44,27 @@ function buscarProductoEnBd(codigo) {
                 mostrarMensajeProductoNoRegistrado(codigo);
             }
         },
-        error: function(xrh,status, error) {
+        error: function(xhr,status, error) {
             console.error("Error al buscar en la base de datos: ",error );
         }
     });
+}
+//funcion para carga rapida
+function cargaRapida(codigo) {
+    $.ajax({
+        url:'../api/product_lookup.php',
+        method: 'GET',
+        data: {codigo_barras: codigo},
+        success: function(response) {
+            mostrarInfoProducto(response.producto);0
+        },
+        error: function(xhr,status,error) {
+            console.error("Error al obtener la informacion de la API: ", error);
+        }
+    });
+}
+
+//funcion para mostrar la informacion de los productos
+function mostrarInfoProducto(producto) {
+    
 }
